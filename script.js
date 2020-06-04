@@ -72,7 +72,7 @@ function generatePassword() {
       // Create a for loop that will exit once reaches User defined password length
       for (let i = 0; i < confirmLength; i++) 
       
-      // execute code block: "" + randomly generated character from within master array --> 
+      // execute code block
       {
         userGenPassword = userGenPassword + totalPasswordCharacters[Math.floor(Math.random() * totalPasswordCharacters.length)];
       }
