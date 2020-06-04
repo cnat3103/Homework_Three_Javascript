@@ -17,8 +17,8 @@ generateBtn.addEventListener("click", writePassword);
 // Step One - Arrays entered to declare character inputs
 let number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "<", ">", "?"];
-let alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-let alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+let lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
 
 // Step Two - Establish password length: Prompt user to confirm number of characters
@@ -33,18 +33,18 @@ function generatePassword() {
 
 
     // Step Four - User to confirm the characters required for password
-    let confirmSpecialCharacters = confirm("Please confirm if you would like to include special characters");
-    let confirmNumericCharacters = confirm("Please confirm if you would like to include numeric characters");    
-    let confirmLowerCase = confirm("Please confirm if you would like to include lowercase characters");
-    let confirmUpperCase = confirm("Please confirm if you would like to include uppercase characters");
+    let confirmSpecialCharacters = confirm("Would you like the password to feature special characters?");
+    let confirmNumericCharacters = confirm("Would you like the password to feature numeric characters?");    
+    let confirmLowerCase = confirm("Would you like the password to feature lowercase characters?");
+    let confirmUpperCase = confirm("Would you like the password to feature uppercase characters?");
       
     // Loop to prompt user to enter at least one character type if none selected 
       while(confirmUpperCase === false && confirmLowerCase === false && confirmSpecialCharacter === false && confirmNumericCharacter === false) {
         alert("You must choose at least one character type");
-        let confirmSpecialCharacters = confirm("Please confirm if you would like to include special characters");
-        let confirmNumericCharacters = confirm("Please to confirm if you would like to include numeric characters");    
-        let confirmLowerCase = confirm("Please confirm if you would like to include lowercase characters");
-        let confirmUpperCase = confirm("Please confirm if you would like to include uppercase characters");   
+        let confirmSpecialCharacters = confirm("Would you like the password to feature special characters?");
+        let confirmNumericCharacters = confirm("Would you like the password to feature numeric characters?");    
+        let confirmLowerCase = confirm("Would you like the password to feature lowercase characters?");
+        let confirmUpperCase = confirm("Would you like the password to feature uppercase characters?");   
     } 
     
     // Step Five - Build a new master array according to User specifications using conditional state statements and the concat method 
@@ -59,11 +59,11 @@ function generatePassword() {
     }
       
     if (confirmLowerCase) {
-      totalPasswordCharacters = totalPasswordCharacters.concat(alphaLower)
+      totalPasswordCharacters = totalPasswordCharacters.concat(lowerCase)
     }
 
     if (confirmUpperCase) {
-      totalPasswordCharacters = totalPasswordCharacters.concat(alphaUpper)
+      totalPasswordCharacters = totalPasswordCharacters.concat(upperCase)
     }
 
       // Step Six - Declare userGenPassword as empty string to avoid undefined error - NOTE - understand this is not best practice
